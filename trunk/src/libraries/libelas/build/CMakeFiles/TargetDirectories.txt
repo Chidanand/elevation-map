@@ -1,0 +1,1 @@
+/home/pablo/svn/materias/vision en robótica/tps/tp4/src/libelas/build/CMakeFiles/elas.dir

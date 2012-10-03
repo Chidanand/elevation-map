@@ -1,0 +1,8 @@
+reproject_image_to_point_cloud programa que dado un mapa una imagen original (izquierda), su correspondiente mapa de disparidad en escala de grises y la matriz de retroprojection Q (Q.xml) genera un 3d point cloud.
+
+Se compila con cmake, este genera un archivo Makefile.
+Para compilar son necesarios unicamente los archivos:
+- CMakeLists.txt
+- reproject_image_to_point_cloud.cpp
+
+Es necesario tener las librerias opencv y PCL instaladas.
