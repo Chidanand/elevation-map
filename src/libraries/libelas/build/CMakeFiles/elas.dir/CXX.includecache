@@ -1,0 +1,136 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/pablo/svn/materias/vision en robótica/tps/tp4/src/libelas/src/descriptor.cpp
+descriptor.h
+/home/pablo/svn/materias/vision en robótica/tps/tp4/src/libelas/src/descriptor.h
+filter.h
+/home/pablo/svn/materias/vision en robótica/tps/tp4/src/libelas/src/filter.h
+emmintrin.h
+-
+
+/home/pablo/svn/materias/vision en robótica/tps/tp4/src/libelas/src/descriptor.h
+iostream
+-
+stdio.h
+-
+string.h
+-
+stdlib.h
+-
+math.h
+-
+stdint.h
+-
+
+/home/pablo/svn/materias/vision en robótica/tps/tp4/src/libelas/src/elas.cpp
+elas.h
+/home/pablo/svn/materias/vision en robótica/tps/tp4/src/libelas/src/elas.h
+math.h
+-
+descriptor.h
+/home/pablo/svn/materias/vision en robótica/tps/tp4/src/libelas/src/descriptor.h
+triangle.h
+/home/pablo/svn/materias/vision en robótica/tps/tp4/src/libelas/src/triangle.h
+matrix.h
+/home/pablo/svn/materias/vision en robótica/tps/tp4/src/libelas/src/matrix.h
+
+/home/pablo/svn/materias/vision en robótica/tps/tp4/src/libelas/src/elas.h
+iostream
+-
+stdio.h
+-
+string.h
+-
+stdlib.h
+-
+vector
+-
+emmintrin.h
+-
+stdint.h
+-
+timer.h
+/home/pablo/svn/materias/vision en robótica/tps/tp4/src/libelas/src/timer.h
+
+/home/pablo/svn/materias/vision en robótica/tps/tp4/src/libelas/src/filter.cpp
+stdio.h
+-
+string.h
+-
+cassert
+-
+filter.h
+/home/pablo/svn/materias/vision en robótica/tps/tp4/src/libelas/src/filter.h
+stdint.h
+-
+
+/home/pablo/svn/materias/vision en robótica/tps/tp4/src/libelas/src/filter.h
+emmintrin.h
+-
+pmmintrin.h
+-
+stdint.h
+-
+
+/home/pablo/svn/materias/vision en robótica/tps/tp4/src/libelas/src/matrix.cpp
+matrix.h
+/home/pablo/svn/materias/vision en robótica/tps/tp4/src/libelas/src/matrix.h
+math.h
+-
+
+/home/pablo/svn/materias/vision en robótica/tps/tp4/src/libelas/src/matrix.h
+stdio.h
+-
+string.h
+-
+stdlib.h
+-
+iostream
+-
+vector
+-
+limits
+-
+stdint.h
+-
+
+/home/pablo/svn/materias/vision en robótica/tps/tp4/src/libelas/src/timer.h
+iostream
+-
+iomanip
+-
+stdio.h
+-
+string.h
+-
+stdlib.h
+-
+vector
+-
+string
+-
+sys/time.h
+-
+stdint.h
+-
+
+/home/pablo/svn/materias/vision en robótica/tps/tp4/src/libelas/src/triangle.cpp
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+math.h
+-
+triangle.h
+/home/pablo/svn/materias/vision en robótica/tps/tp4/src/libelas/src/triangle.h
+
+/home/pablo/svn/materias/vision en robótica/tps/tp4/src/libelas/src/triangle.h
+
