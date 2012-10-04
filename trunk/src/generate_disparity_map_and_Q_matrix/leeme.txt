@@ -1,1 +1,3 @@
 la matriz Q generada se le debe cambiar el signo al elemento Q43 caso contrario al generar un 3d point cloud el resultado proyecta puntos atrás de la cámara.
+Las imagenes pasada a este programa no deben estar desdistorcionadas ya que éste las desdistorciona.
+

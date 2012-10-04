@@ -210,15 +210,14 @@ int main( int argc, char** argv )
   cv::imshow("disparity-image", img_disparity);
   
   // map height values to the interval [0,max_height+abs(min_height)]
-  std::cout << "elevation map value: " << elevation_map.at<double>(400,400) << std::endl;
+  //std::cout << "elevation map value: " << elevation_map.at<double>(400,400) << std::endl;
   
   double min_height, max_height;
   getMinMaxFromMat(elevation_map, min_height, max_height);
-  // changeHeightRange(elevation_map, min_height, max_height);
-  
+   
   matEqualization(elevation_map, min_height, 0.0, max_height, 100.0);
 
-  std::cout << "elevation map value: " << elevation_map.at<double>(479,639) << std::endl;
+  //std::cout << "elevation map value: " << elevation_map.at<double>(479,639) << std::endl;
   std::cout << "Min height: " << min_height << " Max height: " << max_height << std::endl;
   // std::cout << "elevation_map " << std::endl << elevation_map << std::endl;
 

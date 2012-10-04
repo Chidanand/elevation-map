@@ -11,6 +11,9 @@ CFLAGS := -DNDEBUG -O3 -march=native
 # OpenCV
 CFLAGS += `pkg-config --cflags --libs opencv`
 
+#DEBUG
+CFLAGS += -ggdb
+
 all: generate_elevation_map
 
 generate_elevation_map:
