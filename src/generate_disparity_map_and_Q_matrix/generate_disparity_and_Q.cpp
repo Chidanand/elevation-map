@@ -48,9 +48,9 @@ void printHSV(cv::Mat_<float>& disparityData, const char* windowName) {
 // Function which calculate disparity (both maps) and show them using the function printHSV
 
 void showDisparity() {
-  Elas::parameters param;
-  param.postprocess_only_left = true; //true = better precition, false = more fast
-  param.ipol_gap_width = 3; // parammeter to interpolate pixles and get a better look of the image
+  Elas::parameters param = Elas::parameters(Elas::ROBOTICS); // the Flag Robotics is 
+  //param.postprocess_only_left = true; //true = better precition, false = more fast
+  //param.ipol_gap_width = 3; // parammeter to interpolate pixles and get a better look of the image
   
   /*Call the constructor of class elas to compute disparity maps */
   Elas elas(param);
@@ -151,13 +151,15 @@ void listenToKeys() {
 
 int main(int argc, char *argv[])
 {
-  if (argc !=4){
-    std::cerr << "Arguments must be passing in this way: ./generate_disparity_image /path/sequence/to/parameters_file.xml /path/sequence/to/left_image /path/sequence/to/right_image" << std::endl;
+  if (argc !=6){
+    std::cerr << "Arguments must be passing in this way: ./generate_disparity_and_Q /path/sequence/to/parameters_file.xml /path/sequence/to/left_image /path/sequence/to/right_image /path/sequence/to/disparity_output.pgm /path/sequence/to/Q_output.xml" << std::endl;
     return -1;
   }
   std::string parameters_xml = argv[1];
   std::string left_image = argv[2];
   std::string right_image = argv[3];
+  std::string disparity_output = argv[4];
+  std::string Q_output = argv[5];
 
   /*read the xml file */
   cv::FileStorage fs(parameters_xml, cv::FileStorage::READ);
@@ -176,7 +178,15 @@ int main(int argc, char *argv[])
   fs["dist2"] >> right_dist;
   fs["R"] >> r;
   fs["T"] >> t;
-  
+
+  std::cout << "K1: " << left_k << std::endl;
+  std::cout << "K2: " << right_k << std::endl;
+  std::cout << "dist1: " << left_dist << std::endl;
+  std::cout << "dist2: " << right_dist << std::endl;
+  std::cout << "R: " << r << std::endl;
+  std::cout << "T: " << t << std::endl;
+
+ 
   fs.release();
   
   
@@ -242,7 +252,7 @@ int main(int argc, char *argv[])
   
   cv::createTrackbar(trackbarName, "Linear Blend", &alpha_slider, trackbar_max, on_trackbar);
 
-  cv::setTrackbarPos(trackbarName, "Linear Blend", 632);
+  cv::setTrackbarPos(trackbarName, "Linear Blend", undistorted_left_im.size().width-1);
 
   cv::Mat dst;
 
@@ -255,12 +265,12 @@ int main(int argc, char *argv[])
   std::vector<int> qualityType;
   qualityType.push_back(CV_IMWRITE_PXM_BINARY);
   qualityType.push_back(1);
-  cv::imwrite("left_disparity.pgm", D2_data, qualityType);
+  cv::imwrite(disparity_output, D2_data, qualityType);
 
   /*Save reprojection matrix Q in a XML file*/
   std::cout << "Matriz Q: " << q << std::endl;
 
-  cv::FileStorage fs_out("Q.xml", cv::FileStorage::WRITE);
+  cv::FileStorage fs_out(Q_output, cv::FileStorage::WRITE);
   fs_out << "Q" << q;
 
   fs_out.release();
