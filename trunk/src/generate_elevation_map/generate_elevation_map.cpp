@@ -176,6 +176,7 @@ int main( int argc, char** argv )
   //Get 3d coordinates
   double px, py, pz;
   uchar pr, pg, pb;
+
  
   for (int i = 0; i < img_rgb.rows; i++)
   {
@@ -197,6 +198,7 @@ int main( int argc, char** argv )
       py = py/pw;
       pz = pz/pw;
       
+
       // std::cout << "Coordenadas pixel: " << "(" << i << ", " << j << ")" << " Height: " << py << std::endl;
       elevation_map.at<double>(i, j) = -py;
     }
