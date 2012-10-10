@@ -161,7 +161,7 @@ int main( int argc, char** argv )
   
   double px, py, pz;
   uchar pr, pg, pb;
-  
+
   for (int i = 0; i < img_rgb.rows; i++)
   {
     uchar* rgb_ptr = img_rgb.ptr<uchar>(i);
@@ -195,12 +195,13 @@ int main( int argc, char** argv )
       pb = rgb_ptr[3*j];
       pg = rgb_ptr[3*j+1];
       pr = rgb_ptr[3*j+2];
-      
+
       //Insert info into point cloud structure
       pcl::PointXYZRGB point;
       point.x = px;
       point.y = py;
       point.z = pz;
+      
       uint32_t rgb = (static_cast<uint32_t>(pr) << 16 |
               static_cast<uint32_t>(pg) << 8 | static_cast<uint32_t>(pb));
       point.rgb = *reinterpret_cast<float*>(&rgb);
