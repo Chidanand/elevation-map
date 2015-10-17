@@ -1,0 +1,1 @@
+Compute elevation map using stereo vision.
